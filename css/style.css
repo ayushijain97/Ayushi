@@ -121,6 +121,7 @@ a {
 }
 .badge--small {
   font-size: 1.6rem;
+  padding: 0.5rem 1.5rem;
 }
 @media screen and (min-width: 1024px) {
   .badge {
@@ -200,9 +201,16 @@ a {
   font-weight: 600;
   margin: 1rem 0;
   padding: 2rem 3rem;
+  outline: 0;
   text-align: center;
   text-transform: uppercase;
   white-space: nowrap;
+}
+.btn .icon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+  vertical-align: middle;
 }
 .btn--primary {
   background: var(--color-primary);
@@ -274,7 +282,7 @@ a {
 .input-group .input {
   border: 0;
   flex-grow: 1;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 2rem;
 }
 .input-group.btn {
   margin: 4px;
@@ -321,16 +329,27 @@ a {
   background: var(--color-primary);
   color: #fff;
 }
-
-.card--secondary .badge--secondary {
+.card--secondary .card__header {
   background: var(--color-secondary);
   color: #fff;
+}
+
+.card--primary .badge--primary {
+  background: #126de4;
+}
+
+.card--secondary .badge--secondary {
+  background: #02cdf1;
 }
 /* 
 
        PLANS
 
 */
+.plan {
+  transition: transform 0.2s ease-out;
+}
+
 .plan__name {
   color: #fff;
   margin: 0;
@@ -358,7 +377,9 @@ a {
 .plan .list__item {
   margin-bottom: 2rem;
 }
-
+.plan--popular {
+  transform: scale(1.1);
+}
 .plan--popular .card__header {
   position: relative;
 }
@@ -371,7 +392,12 @@ a {
   top: -1px;
   right: 5%;
 }
-
+.plan:hover {
+  transform: scale(1.05);
+}
+.plan--popular:hover {
+  transform: scale(1.15);
+}
 @media screen and (min-width: 1024px) {
   .plan__name {
     font-size: 1.4rem;
@@ -680,7 +706,7 @@ media object
   margin: 2rem 0 5rem;
 }
 .hero__image {
-  width: 100%;
+  width: 80%;
 }
 @media screen and (min-width: 768px) {
   .hero {
@@ -690,4 +716,43 @@ media object
     text-align: left;
     align-self: center;
   }
+}
+/* 
+
+       Domain
+
+
+*/
+.block-domain .input-group {
+  box-shadow: 0 0 30px 20px #e6ebee;
+  border: 0;
+  margin: 4rem auto;
+  max-width: 670px;
+}
+.block-domain__price {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 6rem);
+  font-size: 2rem;
+  font-weight: 600;
+  justify-items: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .block-domain__price {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  }
+}
+/* 
+
+      plans block
+
+*/
+.block-plans .grid {
+  gap: 8rem 4rem;
+}
+.block-plans .card {
+  max-width: 500px;
+  margin: 0 auto;
 }
