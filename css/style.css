@@ -138,7 +138,7 @@ a {
 .list {
   list-style: none;
   padding-left: 0;
-  color: var(--color-headings);
+  /* color: var(--color-headings); */
 }
 .list--inline .list__item {
   display: inline-block;
@@ -200,7 +200,7 @@ a {
   font-size: 1.8rem;
   font-weight: 600;
   margin: 1rem 0;
-  padding: 2rem 3rem;
+  padding: 2rem 4vw;
   outline: 0;
   text-align: center;
   text-transform: uppercase;
@@ -283,6 +283,7 @@ a {
   border: 0;
   flex-grow: 1;
   padding: 1.5rem 2rem;
+  width: 0;
 }
 .input-group.btn {
   margin: 4px;
@@ -504,8 +505,14 @@ media object
 .testimonial {
   padding: 3rem;
 }
+.testimonial .quote {
+  margin: 2rem 0;
+  font-size: 110%;
+}
+
 .testimonial__image {
   position: relative;
+  margin: 0 3rem;
 }
 .testimonial__image > img {
   width: 100%;
@@ -524,7 +531,9 @@ media object
     font-size: 2.4rem;
   }
   .testimonial .quote {
-    margin-left: 6rem;
+    margin: 5rem 0 0 6rem;
+    font-size: 120%;
+    line-height: 1.5;
   }
 
   /* 
@@ -553,16 +562,15 @@ media object
     text-align: center;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .callout .grid--1x2 {
     grid-template-columns: 1fr auto;
   }
   .callout__content {
     text-align: left;
   }
-  .callout .btn {
-    justify-self: start;
-    margin: 0 2rem;
+  .callout__btn {
+    margin-top: 35px;
   }
 }
 /* 
@@ -679,6 +687,11 @@ media object
   background: #000;
   color: #7b858b;
 }
+.block--dark h1,
+.block--dark h2,
+.block--dark h3 {
+  color: #fff;
+}
 
 .block--dark .block__heading {
   color: #fff;
@@ -686,7 +699,7 @@ media object
 
 .block--skewed-right {
   padding-bottom: calc(var(--padding-vertical) + 4rem);
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 95%);
 }
 
 .block--skewed-left {
@@ -732,7 +745,8 @@ media object
 }
 .block-domain__price {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  color: var(--color-headings);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 6rem);
   font-size: 2rem;
   font-weight: 600;
@@ -785,6 +799,28 @@ media object
     order: 2;
   }
 }
+/*
+      showcase  
+ */
+.block-showcase__image > img {
+  width: 100%;
+  max-width: 700px;
+}
+@media screen and (min-width: 768px) {
+  .block-showcase .grid {
+    grid-template-columns: 50% 50%;
+  }
+
+  .block-showcase__image {
+    justify-self: end;
+  }
+
+  .block-showcase__image > img {
+    width: auto;
+    max-width: 700px;
+  }
+}
+
 /* 
 
       Footer
@@ -849,4 +885,8 @@ media object
   .footer__heading {
     font-size: 1.6rem;
   }
+}
+/* Sign-up Callout */
+.callout-signup {
+  transform: translateY(3rem);
 }
